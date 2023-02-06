@@ -35,6 +35,5 @@
 
 // Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
-// WPM sync
-#define SPLIT_WPM_ENABLE
-#define SPLIT_OLED_ENABLE
+
+#define SPLIT_TRANSACTION_IDS_USER USER_SYNC_A, USER_SYNC_B, USER_SYNC_C
