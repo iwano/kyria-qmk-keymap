@@ -43,6 +43,8 @@ enum custom_keycodes {
 #define CTL_MINS MT(MOD_RCTL, KC_MINUS)
 #define ALT_ENT  MT(MOD_LALT, KC_ENT)
 #define HYPER_ENT  MT(MOD_HYPR, KC_ENT)
+#define CMD_SPC  RGUI_T(KC_SPC)
+#define CMD_BSPC LGUI_T(KC_BSPC)
 
 int img_idx = -1;
 
@@ -58,15 +60,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |FKEYS |  |HYPR/Entr|   |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LALT | LGUI | Bksp | Nav  |  | Sym  | Space| RGUI  | RALT | FKEYS|
- *                        |      |      |      |      |      |  |      |      |       |      |      |
+ *                        |Adjust|      | LALT |CMDBsp| Nav  |  | Sym  |CMDSPC| RALT |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_EQL,
      CTL_ESC , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
      KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , _______,    FKEYS,     HYPER_ENT, _______, KC_N,   KC_M ,  KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                                ADJUST , KC_LEFT_ALT, KC_LGUI, KC_BSPC , NAV,     SYM    , KC_SPC ,KC_RGUI, KC_RIGHT_ALT, FKEYS
+                                ADJUST , _______, KC_LEFT_ALT,CMD_BSPC , NAV,     SYM,CMD_SPC,KC_RIGHT_ALT, _______, _______
     ),
 
 /*
