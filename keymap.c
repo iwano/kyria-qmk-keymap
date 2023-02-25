@@ -462,6 +462,11 @@ void user_sync_a_slave_handler(uint8_t in_buflen, const void* in_data, uint8_t o
 
 void keyboard_post_init_user(void) {
     transaction_register_rpc(USER_SYNC_A, user_sync_a_slave_handler);
+
+    // Turn on lights
+    rgblight_enable_noeeprom();
+    rgblight_sethsv(201, 255, 255); // purple
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 }
 
 void housekeeping_task_user(void) {
